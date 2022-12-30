@@ -96,13 +96,17 @@ header.scrolled {
     margin: 0 24px;
 }
 
+.header_lang_wrapper a:nth-child(1) {
+    margin: 0 4px ;
+}
+
 .header_item img {
     max-width: 13rem;
 }
 
-.header_inner_item:nth-child(5) {
-    display: inline-block;
+.header_lang_wrapper a:nth-child(2) {
     margin-left: 5px;
+    opacity: 0.6;
 }
 
 .header_item:nth-child(3) a {
@@ -123,7 +127,8 @@ header.scrolled {
     color: var(--color-green);
 }
 
-button {
+button,
+.header_btn {
     background: var(--color-yellow);
     padding: 8px 16px;
     border: none;
@@ -133,12 +138,14 @@ button {
     box-shadow: 0px 1px 2px rgba(105, 81, 255, 0.05);
 }
 
-button:hover {
+button:hover,
+.header_btn:hover {
     transform: scale(0.9);
     cursor: pointer;
 }
 
-button:active {
+button:active,
+.header_btn:active {
     transform: scale(0.8);
     transition: all 0.2s ease;
 }
@@ -313,7 +320,6 @@ section {
     top: 20px;
     transform: translateY(-50%) rotate(45deg);
     height: 3px;
-    transform: translate(45deg);
     background: var(--color-gray);
     border-radius: 2.5px 0px 0px 2.5px;
     transition: all 0.3s ease;
@@ -328,7 +334,6 @@ section {
     top: 20px;
     transform: translateY(-50%) rotate(-45deg);
     height: 3px;
-    transform: translate(45deg);
     background: var(--color-gray);
     border-radius: 0px 2.5px 2.5px 0px;
     transition: all 0.3s ease;
@@ -404,4 +409,9 @@ section {
 
 .header_message_error_closer:hover .closer_line {
     transform: rotate(0deg);
+}
+
+.header_numbers,
+.header_text {
+    display: none;
 }
