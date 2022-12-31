@@ -5,30 +5,14 @@ window.addEventListener("scroll", () => {
 })
 
 let header_burger = document.querySelector(".header_burger"),
-    lines = document.querySelectorAll(".header_line")
+    lines = document.querySelectorAll(".header_line"),
+    header_item = document.querySelector('.header_item:nth-child(2)')
 header_burger.addEventListener("click", () => {
+    header_item.classList.toggle("open")
     lines.forEach((line) => {
         line.classList.toggle("open")
     });
 })
-
-document.querySelectorAll(".select_text").forEach((el) => {
-    el.addEventListener("click", () => {
-        let content = el.nextElementSibling,
-            header_select_wrapper = document.querySelector(".header_select_wrapper")
-        if (content.style.maxHeight) {
-            let content = document.querySelector(".accardion_wrapper")
-            content.style.maxHeight = null
-            content.style.marginTop = 0
-            header_select_wrapper.classList.remove("opened")
-        } else {
-            let content = document.querySelector(".accardion_wrapper")
-            content.style.maxHeight = content.scrollHeight + "px"
-            header_select_wrapper.classList.add("opened")
-        }
-    })
-})
-
 let header_btn = document.querySelector(".header_btn"),
     header_form = document.querySelector(".header_form"),
     header_closer = document.querySelector(".header_closer")
@@ -53,4 +37,14 @@ header_message_error_closer.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
     success.classList.add("opened")
     error.classList.add("opened")
+})
+
+let header_inner_items = document.querySelectorAll('.header_inner_item')
+header_inner_items.forEach((elem) => {
+    elem.addEventListener('click', () => {
+        header_item.classList.toggle("open")
+        lines.forEach((line) => {
+            line.classList.toggle("open")
+        });
+    })
 })

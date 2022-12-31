@@ -23,6 +23,10 @@
         --size-heding: 90px;
         --size-heading-small: 60px;
     }
+
+    .header_btn {
+        margin-left: 40px;
+    }
 }
 
 @media screen and (max-width:1100px) {
@@ -38,11 +42,15 @@
         --size-heding: 90px;
         --size-heading-small: 60px;
     }
+
+    .header_btn {
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width:1000px) {
     :root {
-        --size-hero-heading: 75px;
+        --size-hero-heading: 65px;
 
         --size-text-large: 40px;
         --size-text-big: 30px;
@@ -56,13 +64,17 @@
 
     .header_item:nth-child(2) {
         position: fixed;
-        top: 110px;
-        left: 0;
+        top: 0%;
+        left: -100%;
         width: 100%;
         height: 100vh;
         background: var(--color-white);
-        z-index: 100;
-        padding: 0 4%;
+        z-index: 500 !important;
+        padding: 110px 4% 0 4%;
+    }
+
+    .header_item:nth-child(2).open {
+        left: 0;
     }
 
     .header_item:nth-child(3) {
@@ -133,11 +145,23 @@
     .header_numbers {
         font-size: 16px;
     }
+
+    .header_inner_item a {
+        font-size: var(--size-text);
+    }
+
+    .swiper-button-next i {
+        right: -50px;
+    }
+
+    .swiper-button-next i:hover {
+        right: -60px;
+    }
 }
 
 @media screen and (max-width:900px) {
     :root {
-        --size-hero-heading: 75px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 40px;
         --size-text-big: 30px;
@@ -148,11 +172,19 @@
         --size-heding: 90px;
         --size-heading-small: 60px;
     }
+
+    .swiper-button-next i {
+        right: -50px;
+    }
+
+    .swiper-button-next i:hover {
+        right: -60px;
+    }
 }
 
 @media screen and (max-width:800px) {
     :root {
-        --size-hero-heading: 73px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 40px;
         --size-text-big: 30px;
@@ -167,7 +199,7 @@
 
 @media screen and (max-width:700px) {
     :root {
-        --size-hero-heading: 71px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 40px;
         --size-text-big: 30px;
@@ -182,7 +214,7 @@
 
 @media screen and (max-width:600px) {
     :root {
-        --size-hero-heading: 69px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 38px;
         --size-text-big: 29px;
@@ -197,7 +229,7 @@
 
 @media screen and (max-width:500px) {
     :root {
-        --size-hero-heading: 67px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 36px;
         --size-text-big: 28px;
@@ -212,7 +244,7 @@
 
 @media screen and (max-width:400px) {
     :root {
-        --size-hero-heading: 65px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 34px;
         --size-text-big: 26px;
@@ -223,11 +255,16 @@
         --size-heding: 55px;
         --size-heading-small: 54px;
     }
+
+    .header_lang_wrapper {
+        margin-top: 54px;
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (max-width:300px) {
     :root {
-        --size-hero-heading: 60px;
+        --size-hero-heading: 50px;
 
         --size-text-large: 32px;
         --size-text-big: 30px;
