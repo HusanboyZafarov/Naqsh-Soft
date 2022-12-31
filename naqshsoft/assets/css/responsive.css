@@ -229,7 +229,7 @@
 
 @media screen and (max-width:500px) {
     :root {
-        --size-hero-heading: 50px;
+        --size-hero-heading: 45px;
 
         --size-text-large: 36px;
         --size-text-big: 28px;
@@ -240,11 +240,23 @@
         --size-heding: 70px;
         --size-heading-small: 58px;
     }
+
+    .swiper {
+        height: 450px;
+    }
+
+    .swiper-button-next i {
+        right: -30px;
+    }
+
+    .swiper-button-next i:hover {
+        right: -40px;
+    }
 }
 
 @media screen and (max-width:400px) {
     :root {
-        --size-hero-heading: 50px;
+        --size-hero-heading: 40px;
 
         --size-text-large: 34px;
         --size-text-big: 26px;
@@ -264,10 +276,10 @@
 
 @media screen and (max-width:300px) {
     :root {
-        --size-hero-heading: 50px;
+        --size-hero-heading: 35px;
 
         --size-text-large: 32px;
-        --size-text-big: 30px;
+        --size-text-big: 20px;
         --size-text: 20px;
         --size-text-small: 16px;
 

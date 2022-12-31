@@ -78,6 +78,7 @@ header {
     left: 0;
     width: 100%;
     background: transparent;
+    z-index: 10;
 }
 
 header.scrolled {
@@ -215,10 +216,6 @@ button:active,
     position: relative;
     top: 0;
     left: 0;
-}
-
-section {
-    height: 500vh;
 }
 
 .header_form {
@@ -525,4 +522,26 @@ section {
 
 .section_hero_text a {
     color: var(--color-green);
+}
+
+.section_service {
+    position: relative;
+    z-index: 1;
+}
+
+.section_service {
+    padding-top: 100px;
+}
+
+section {
+    height: 500vh;
+}
+
+.list_info {
+    display: flex;
+}
+
+.list_info_item::before {
+    content: '';
+    display: block;
 }
