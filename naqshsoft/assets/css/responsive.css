@@ -470,8 +470,8 @@
         --size-hero-heading: 35px;
 
         --size-text-large: 33px;
-        --size-text-big: 20px;
-        --size-text: 20px;
+        --size-text-big: 22px;
+        --size-text: 18px;
         --size-text-small: 16px;
 
         --size-heading-big: 90px;
@@ -515,9 +515,6 @@
         display: none;
     }
 
-    .swiper_job {
-        display: block;
-    }
 
     .section_job_list {
         max-height: 500px;
@@ -547,16 +544,12 @@
 
     .section_job_item {
         padding: 20px 14px;
-        max-height: 400px;
-        height: 340px;
+        max-height: none;
+        height: auto;
     }
 
     .section_job_item h3 {
         margin-left: 30px;
-    }
-
-    .swiper_job {
-        height: auto;
     }
 
     .header_form.open {
@@ -640,6 +633,11 @@
         top: 20px;
         left: 30px;
     }
+
+    .swiper_job {
+        display: block;
+        height: 420px;
+    }
 }
 
 @media screen and (max-width:400px) {
@@ -678,11 +676,11 @@
     .section_job_item {
         min-height: none;
         max-height: none;
-        height: auto;
+        height: 100%;
     }
 
     .swiper_job {
-        height: 490px;
+        height: 450px;
     }
 
     .footer_item p br {
@@ -706,6 +704,18 @@
     }
 }
 
+@media screen and (max-width:350px) {
+    .swiper_job {
+        height: 520px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .swiper_job {
+        height: 570px;
+    }
+}
+
 @media screen and (max-width:300px) {
     :root {
         --size-hero-heading: 35px;
@@ -721,7 +731,6 @@
     }
 
     .swiper_job {
-        overflow: hidden;
-        height: auto;
+        height: 600px;
     }
 }
