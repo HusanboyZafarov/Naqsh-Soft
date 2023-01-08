@@ -444,15 +444,10 @@ button:active,
     position: fixed;
 }
 
-.success.opened {
-    right: 0;
-    display: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
+.success.opened,
 .error.opened {
     right: 0;
-    display: none;
+    display: block;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 

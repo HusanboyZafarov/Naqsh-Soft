@@ -717,6 +717,40 @@
     .header_form {
         width: 97%;
     }
+
+    .success {
+        right: -700px;
+        padding: 15px 20px;
+    }
+
+    .success.opened {
+        padding: 15px 20px;
+        right: 0;
+        left: 0;
+        display: block;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .success,
+    .error {
+        right: -700px;
+        padding: 15px 20px;
+    }
+
+    .success.opened,
+    .error.opened {
+        padding: 15px 20px;
+        right: 0;
+        left: 0;
+        display: block;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .header_message_success_closer {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
 }
 
 @media screen and (max-width:350px) {
