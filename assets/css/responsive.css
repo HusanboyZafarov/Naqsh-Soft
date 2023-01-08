@@ -640,9 +640,14 @@
     }
 
     .header_form {
-        padding: 15px 10px;
-        max-width: none;
+        padding: 20px;
+        max-width: 100%;
         width: 80%;
+    }
+
+    .header_closer {
+        top: 15px;
+        right: 15px;
     }
 }
 
@@ -707,6 +712,10 @@
         height: 50px;
         right: -100px;
         bottom: 100px;
+    }
+
+    .header_form {
+        width: 97   %;
     }
 }
 
