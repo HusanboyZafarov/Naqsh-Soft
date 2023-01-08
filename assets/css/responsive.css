@@ -638,6 +638,12 @@
         display: block;
         height: 420px;
     }
+
+    .header_form {
+        padding: 15px 10px;
+        max-width: none;
+        width: 80%;
+    }
 }
 
 @media screen and (max-width:400px) {
