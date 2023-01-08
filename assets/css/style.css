@@ -122,7 +122,7 @@ header {
 }
 
 .header_item img {
-    max-width: 13rem;
+    max-width: 10rem;
 }
 
 .header_lang_wrapper a:nth-child(2) {
@@ -1073,6 +1073,10 @@ footer {
 
 .footer_item {
     width: 25%;
+}
+
+.footer_item:nth-child(1) a img {
+    width: 8rem;
 }
 
 .footer_item p {
