@@ -751,6 +751,14 @@
         transform: translateY(-50%);
     }
 
+    .list_info_item {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .section_service_list {
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-width:350px) {

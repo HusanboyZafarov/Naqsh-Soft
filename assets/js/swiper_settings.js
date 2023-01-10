@@ -41,20 +41,23 @@ const swiper_trust_one = new Swiper('.swiper_trust_one', {
     slidesPerView: 10,
     loop: true,
     autoplay: {
-        delay: 1,
+        delay: 1000,
         enabled: true,
     },
-    speed: 900,
+    speed: 2000,
     grabCursor: true,
     breakpoints: {
         100: {
             slidesPerView: 2
         },
         320: {
+            slidesPerView: 2
+        },
+        400: {
             slidesPerView: 3
         },
         500: {
-            slidesPerView: 5
+            slidesPerView: 4
         },
         700: {
             slidesPerView: 7
@@ -69,7 +72,7 @@ const swiper_trust_two = new Swiper('.swiper_trust_two', {
     slidesPerView: 10,
     loop: true,
     autoplay: {
-        delay: 1,
+        delay: 1000,
         enabled: true,
         reverseDirection: true,
     },
@@ -80,10 +83,13 @@ const swiper_trust_two = new Swiper('.swiper_trust_two', {
             slidesPerView: 2
         },
         320: {
+            slidesPerView: 2
+        },
+        400: {
             slidesPerView: 3
         },
         500: {
-            slidesPerView: 5
+            slidesPerView: 4
         },
         700: {
             slidesPerView: 7
