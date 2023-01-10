@@ -920,8 +920,13 @@ section {
     flex-direction: column;
 }
 
-.section_works_list_works {
+.section_works {
     position: relative;
+    z-index: 1000;
+}
+
+.section_works_list_works {
+    position: static;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -935,6 +940,110 @@ section {
 .section_works_item_work {
     width: 23%;
     margin: 1%;
+    position: relative;
+}
+
+.section_works_item_work h1 {
+    display: none;
+}
+
+.section_works_item_work.none {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 50%;
+    opacity: 0;
+}
+
+.section_works_item_work.opened {
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 50%;
+    background: var(--color-bg);
+    z-index: 105;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    padding: 20px;
+    opacity: 1;
+}
+
+.section_works_item_work_info {
+    display: none;
+}
+
+.section_works_item_work.opened .section_works_item_work_info {
+    display: block;
+}
+
+.section_works_item_work.opened img {
+    width: 14rem;
+}
+
+.section_works_item_work.opened .section_works_item_work_info h1 {
+    display: block;
+}
+
+.work_closer_one {
+    position: absolute;
+    right: 0;
+    top: 43%;
+    width: 30px;
+    height: 5px;
+    background: var(--color-green);
+}
+
+.section_works_item_work_info_closer {
+    cursor: pointer;
+    padding: 15px;
+    top: 20px;
+    right: 25px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 5px;
+}
+
+.section_works_item_work_info_closer:hover .work_closer_one {
+    transform: rotate(0deg) !important;
+}
+
+.work_closer_one:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+.work_closer_one:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.section_works_item_work.opened .section_works_item_work_info p {
+    margin: 20px 0;
+}
+
+.section_works_item_text h1 {
+    display: inline-block;
+}
+
+.section_works_item_work.opened .section_works_item_work_info {
+    display: block;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.section_works_item_work_info a {
+    color: var(--color-green);
+}
+
+.section_works_item_work_info a:hover {
+    text-decoration: underline;
+}
+
+.section_works_item_work.opened .section_works_item_work_info p {
+    white-space: wrap;
 }
 
 .section_works_item_work img {

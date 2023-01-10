@@ -1,3 +1,9 @@
+let header_btn = document.querySelector(".header_btn"),
+    header_form = document.querySelector(".header_form"),
+    header_closer = document.querySelector(".header_closer"),
+    from_bg_closer = document.querySelector(".from_bg_closer"),
+    section_works_item_work_info_closer = document.querySelectorAll(".section_works_item_work_info_closer")
+
 let header_burger = document.querySelector(".header_burger"),
     lines = document.querySelectorAll(".header_line"),
     body = document.querySelector("body"),
@@ -11,15 +17,38 @@ header_burger.addEventListener("click", () => {
     body.classList.toggle("opened")
     html.classList.toggle("opened")
 })
-let header_btn = document.querySelector(".header_btn"),
-    header_form = document.querySelector(".header_form"),
-    header_closer = document.querySelector(".header_closer"),
-    from_bg_closer = document.querySelector(".from_bg_closer")
+
+let section_works_item_work_clicks = document.querySelectorAll(".section_works_item_img")
+
+section_works_item_work_clicks.forEach((el) => {
+    el.addEventListener("click", () => {
+        div = el.parentElement
+        section_works_item_work_clicks.forEach((el) => {
+            outer_div = el.parentElement
+            outer_div.classList.remove("opened")
+        });
+        div.classList.add("opened")
+        from_bg_closer.classList.add("opened")
+    })
+});
+section_works_item_work_info_closer.forEach((element) => {
+    element.addEventListener("click", () => {
+        section_works_item_work_clicks.forEach((el) => {
+            outer_div = el.parentElement
+            outer_div.classList.remove("opened")
+        });
+        from_bg_closer.classList.remove("opened")
+    })
+});
+
 from_bg_closer.addEventListener("click", () => {
     header_form.classList.remove("open")
     body.classList.remove("opened")
     html.classList.remove("opened")
     from_bg_closer.classList.remove("opened")
+    section_works_item_work_clicks.forEach((el) => {
+        el.classList.remove("opened")
+    });
 })
 header_closer.addEventListener("click", () => {
     header_form.classList.remove("open")
@@ -153,3 +182,5 @@ let btn_up = document.querySelector(".btn-up")
 window.addEventListener("scroll", () => {
     btn_up.classList.toggle("opened", window.scrollY > 500)
 })
+
+
