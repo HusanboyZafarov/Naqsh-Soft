@@ -19,25 +19,38 @@ header_burger.addEventListener("click", () => {
 })
 
 let section_works_item_work_clicks = document.querySelectorAll(".section_works_item_img")
-
 section_works_item_work_clicks.forEach((el) => {
     el.addEventListener("click", () => {
         div = el.parentElement
         section_works_item_work_clicks.forEach((el) => {
             outer_div = el.parentElement
             outer_div.classList.remove("opened")
+            outer_div.classList.remove("none")
         });
-        div.classList.add("opened")
-        from_bg_closer.classList.add("opened")
+        div.classList.add("none")
+        let timeID = setTimeout(changed, 500)
+        function changed() {
+            outer_div = el.parentElement
+            outer_div.classList.remove("none")
+            outer_div.classList.add("opened")
+        }
     })
 });
+
+
+
 section_works_item_work_info_closer.forEach((element) => {
     element.addEventListener("click", () => {
+        div = element.parentElement
         section_works_item_work_clicks.forEach((el) => {
             outer_div = el.parentElement
             outer_div.classList.remove("opened")
         });
-        from_bg_closer.classList.remove("opened")
+        div.classList.add("none")
+        let timeID = setTimeout(noned, 1500)
+        function noned() {
+            div.classList.remove("none")
+        }
     })
 });
 
@@ -103,7 +116,6 @@ window.addEventListener("load", () => {
         loader.classList.toggle("loaded")
     }
 })
-
 
 let item_works = document.querySelectorAll('.section_works_inner_item'),
     item_works_spans = document.querySelectorAll('.section_work_span'),

@@ -634,6 +634,10 @@ section {
     transition: all 0.5s ease;
 }
 
+.section_service_item:nth-child(1) {
+    word-wrap: break-word;
+}
+
 .section_service_item:hover {
     transition: all 0.5s ease;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -922,7 +926,6 @@ section {
 
 .section_works {
     position: relative;
-    z-index: 1000;
 }
 
 .section_works_list_works {
@@ -948,12 +951,11 @@ section {
 }
 
 .section_works_item_work.none {
-    top: 0;
+    top: -100%;
     left: 50%;
     transform: translateX(-50%);
     position: fixed;
     width: 50%;
-    opacity: 0;
 }
 
 .section_works_item_work.opened {
