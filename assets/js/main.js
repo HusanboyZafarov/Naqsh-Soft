@@ -37,8 +37,6 @@ section_works_item_work_clicks.forEach((el) => {
     })
 });
 
-
-
 section_works_item_work_info_closer.forEach((element) => {
     element.addEventListener("click", () => {
         div = element.parentElement
@@ -196,3 +194,7 @@ window.addEventListener("scroll", () => {
 })
 
 
+window.addEventListener("scroll", () => {
+    success.classList.remove("opened", window.scrollY > 300)
+    error.classList.remove("opened", window.scrollY > 300)
+})
