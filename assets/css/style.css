@@ -929,7 +929,7 @@ section {
 }
 
 .section_works_list_works {
-    position: static;
+    position: relative;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -937,7 +937,6 @@ section {
     align-items: flex-start;
     padding: 14px 23px;
     background: var(--color-white);
-    min-height: 500px;
 }
 
 .section_works_item_work {
@@ -1142,13 +1141,17 @@ section {
     left: 0;
     top: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--color-white);
     z-index: -1;
     display: none;
+}
+
+.section_work_loader img {
+    width: 10rem;
 }
 
 .section_work_loader.opened {
