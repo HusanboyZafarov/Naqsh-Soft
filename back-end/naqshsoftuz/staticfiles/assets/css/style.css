@@ -937,6 +937,7 @@ section {
     justify-content: start;
     align-items: flex-start;
     padding: 14px 23px;
+    min-height: 265px;
     background: var(--color-white);
 }
 

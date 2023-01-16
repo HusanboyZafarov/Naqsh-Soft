@@ -374,14 +374,6 @@
     }
 
     .section_works_list_works {
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: start;
-        align-items: flex-start;
-        padding: 14px 23px;
-        background: var(--color-white);
         min-height: 500px;
     }
 
