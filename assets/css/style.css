@@ -958,7 +958,7 @@ section {
 }
 
 .section_works_item_work.opened {
-    top: 140px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     position: fixed;
