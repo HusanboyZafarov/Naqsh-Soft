@@ -1,0 +1,592 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naqshsoft.uz/">
+    <meta property="og:title" content="Naqsh Soft - Frond End Web Site">
+    <meta property="og:description" content="no desc">
+    <meta property="og:image"
+        content="https://drive.google.com/file/d/1gxF-ivLnKoYuhB_VbHdFuuEBiwQRKpZ7/view?usp=share_link">
+    <!-- Links -->
+    <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/aos.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="{% static './images/icon.png' %}" type="image/x-icon">
+    <title>Naqsh Soft Uzbekistan</title>
+</head>
+
+<body>
+    <header>
+        <div class="section-wrapp">
+            <div class="container">
+                <ul class="header_list">
+                    <li class="header_item">
+                        <a href="/">
+                            <img src="{% static './images/naqsh-soft-logo.png' %}" alt="">
+                        </a>
+                    </li>
+                    <li class="header_item">
+                        <ul class="header_inner_list">
+                            <li class="header_inner_item"><a href="#about">Biz haqimizda</a></li>
+                            <li class="header_inner_item"><a href="#service">Xizmatlar</a></li>
+                            <li class="header_inner_item"><a href="#customers">Mijozlar</a></li>
+                            <li class="header_inner_item btn_form_opener">Bog’lanish</li>
+                            <li class="header_lang_wrapper">
+                                <a href="#" style="color: var(--color-gray);" class="header_inner_item">UZ</a>
+                                <a href="#" style="color: #00000040;" class="header_inner_item">RU</a>
+                            </li>
+                            <li class="header_btn btn_form_opener">+ Mijoz bo’lish</li>
+                            <li class="header_numbers">
+                                <a href="tel:+998 93 988 88 88">+998 93 988 88 88</a> |
+                                <a href="https://info@naqshsoft.uz">info@naqshsoft.uz</a>
+                            </li>
+                            <li class="header_text">
+                                Naqshsoft 2023 barcha huquqlar himoyalangan. Sayt va undagi ma’lumotlar shaxsiy mulk
+                                hisoblanadi.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header_item">
+                        <div class="header_burger">
+                            <div class="header_line"></div>
+                            <div class="header_line"></div>
+                            <div class="header_line"></div>
+                        </div>
+                    </li>
+
+                    <li class="header_item">
+                        <form class="header_form" method="post">
+                            {% csrf_token %}
+                            <p class="header_form_text">
+                                Xizmatlarga buyurtma yoki maslahat olish uchun bog’lanish formasi
+                            </p>
+                            <div class="header_closer">
+                                <div class="closer_line"></div>
+                                <div class="closer_line"></div>
+                            </div>
+                            {{ form }}
+                            <button type="submit" class="header_form_btn">Yuborish</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="success">
+                Xabar qabul qilindi , tez orada siz bilan bog’lanamiz.
+                <div class="header_message_success_closer">
+                    <div class="closer_line"></div>
+                    <div class="closer_line"></div>
+                </div>
+            </div>
+            {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="error">
+                Xatolik yuz berdi! Qayta urunib qoring!
+                <div class="header_message_error_closer">
+                    <div class="closer_line"></div>
+                    <div class="closer_line"></div>
+                </div>
+            </div>
+            {% endif %} {% comment %}{% endcomment %}
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="from_bg_closer"></div>
+    </header>
+
+    <main>
+        <div class="section_hero">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="section_hero_swiper_wrapper">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"
+                                    style="background-image: url('{% static './images/naqsh_bg.png' %}');">
+                                    <h3 class="section_hero_swiper_heading">
+                                        Biznes uchun eng yaxshi <span class="section_hero_swiper_span">raqamli
+                                            yechimlar</span>
+                                    </h3>
+                                    <p style="color: var(--color-white);">web, mobile ,
+                                        ERP, CRM , analytics</p>
+                                    <h1>1</h1>
+                                </div>
+                                <div class="swiper-slide"
+                                    style="background-image: url('{% static './images/naqsh_bg.png' %}');">
+                                    <h3 class="section_hero_swiper_heading">Biznes uchun <span
+                                            class="section_hero_swiper_span">ERP</span> va <span
+                                            class="section_hero_swiper_span">CRM</span> tizimlari</h3>
+                                    <p style="color: var(--color-white);">web, mobile ,
+                                        ERP, CRM , analytics</p>
+                                    <h1>2</h1>
+                                </div>
+                                <div class="swiper-slide"
+                                    style="background-image: url('{% static './images/naqsh_bg.png' %}');">
+                                    <h3>Biznesni rivoji uchun <span class="section_hero_swiper_span">dasturiy
+                                            ta’minot</span></h3>
+                                    <p style="color: var(--color-white);">web, mobile , ERP, CRM , analytics</p>
+                                    <h1>3</h1>
+                                </div>
+                                <div class="swiper-slide"
+                                    style="background-image: url('{% static './images/naqsh_bg.png' %}');">
+                                    <h3>Biznesni rivoji uchun <span class="section_hero_swiper_span">buyurtma
+                                            dastur</span></h3>
+                                    <p style="color: var(--color-white);">web, mobile , ERP, CRM , analytics</p>
+                                    <h1>4</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"><i class="bi bi-arrow-right"></i></div>
+                    </div>
+                    <div class="section_hero_text">
+                        <a href="/">Naqshsoft</a> biznes uchun web xizmatlar va mobil ilovalar, ERP hamda CRM
+                        tizimlarini
+                        ishlab
+                        chiqadi.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section_service" id="service">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="text-wrapper">
+                        <h1>Bizning xizmatlar</h1>
+                        <ul class="list_info">
+                            <li class="list_info_item">Sifatli</li>
+                            <li class="list_info_item">Hamyonbop</li>
+                            <li class="list_info_item">O’z vaqtida</li>
+                        </ul>
+                    </div>
+                    <ul class="section_service_list">
+                        <li class="section_service_item btn_form_opener" data-aos="fade-up">
+                            <img src="{% static './images/section_service_img_one.svg' %}" alt="">
+                            <p>Biznesni <br> avtomatlashtirish</p>
+                        </li>
+                        <li class="section_service_item btn_form_opener" data-aos="fade-up">
+                            <img src="{% static './images/section_service_img_two.svg' %}" alt="">
+                            <p>CRM tizimlar</p>
+                        </li>
+                        <li class="section_service_item btn_form_opener" data-aos="fade-up">
+                            <img src="{% static './images/section_service_img_three.svg' %}" alt="">
+                            <p>ERP tizimlar</p>
+                        </li>
+                        <li class="section_service_item btn_form_opener" data-aos="fade-up">
+                            <img src="{% static './images/section_service_img_four.svg' %}" alt="">
+                            <p>Veb saytlar</p>
+                        </li>
+                        <li class="section_service_item btn_form_opener" data-aos="fade-up">
+                            <img src="{% static './images/section_service_img_five.svg' %}" alt="">
+                            <p>Mobil ilovalar</p>
+                        </li>
+                        <li class="section_service_item btn_form_opener" data-aos="fade-up">
+                            <img src="{% static './images/section_service_img_six.svg' %}" alt="">
+                            <p>Kompyuter <br> dasturlari</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section_job" id="job">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="text-wrapper">
+                        <h1>Bizning ishga bo’lgan <br>
+                            yondashuvimiz</h1>
+                        <ul class="list_info">
+                            <li class="list_info_item">Rejalashtirish</li>
+                            <li class="list_info_item">Ishlab chiqish</li>
+                            <li class="list_info_item">Rivojlantirish</li>
+                        </ul>
+                    </div>
+                    <div class="section_job_list section_job_first_list">
+                        <li class="section_job_item" data-aos="fade-up"
+                            style="background-image: url('{% static './images/section_job.png' %}');">
+                            <h1>1</h1>
+                            <h3>Rejalashtirish</h3>
+                            <p>Biz turli sohalarda biznesni rivojlantirishni rejalashtirishda yordam beramiz.
+                            </p>
+                            <p>
+                                Biz mahsulotingiz va haridorlaringiz orasida aloqa o’rnatishga ,sotuv va ishlab
+                                chiqarish jarayonlarini nazoratga
+                                olishingizga ko’maklashamiz.
+                            </p>
+                        </li>
+                        <li class="section_job_item" data-aos="fade-left"
+                            style="background-image: url('{% static './images/section_job_img_two.png' %}');">
+                        </li>
+                    </div>
+                    <div class="section_job_list section_job_first_list">
+                        <li class="section_job_item" data-aos="fade-up"
+                            style="background-image: url('{% static './images/section_job.png' %}');">
+                            <h1>2</h1>
+                            <h3>Ishlab chiqish</h3>
+                            <p>Muammo uchun eng oxirgi texnologiyalarni ishga solgan holatda dasturiy ta’minotlar ishlab
+                                chiqamiz.
+                            </p>
+                            <p>
+                                Bugungi kundagi ilg’or texnologiyalar, dasturlash tillari va tajribali xodimlarni jalb
+                                qilishimiz biznesingiz rivoji
+                                uchun muhim ahamiyatga ega.
+                            </p>
+                        </li>
+                        <li class="section_job_item" data-aos="fade-right"
+                            style="background-image: url('{% static './images/section_job_img_one.png' %}');">
+                        </li>
+                    </div>
+                    <div class="section_job_list section_job_first_list">
+                        <li class="section_job_item" data-aos="fade-up"
+                            style="background-image: url('{% static './images/section_job.png' %}');">
+                            <h1>3</h1>
+                            <h3>Rivojlantirish</h3>
+                            <p>Bizda ishga nisbatan o’zgacha yondashuv mavjud. Biz yechimlarni qayta qayta tekshiramiz ,
+                                tekshiramiz, rivojlantiramiz.
+                            </p>
+                            <p>
+                                Biznes tilida gapiramiz. Siz uchun tushunarli, ochiq holatda muammo uchun yechimlarni
+                                tadbiq qilamiz. Uzoq muddatlik
+                                qo’llab quvvatlashga e’tibor qaratamiz.
+                            </p>
+                        </li>
+                        <li class="section_job_item" data-aos="fade-left"
+                            style="background-image: url('{% static './images/section_job_img_three.png' %}');">
+                        </li>
+                    </div>
+                </div>
+                <div class="swiper_job">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="container">
+                                <div class="section_job_list">
+                                    <li class="section_job_item" data-aos="fade-up"
+                                        style="background-image: url('{% static './images/section_job.png' %}');">
+                                        <h1>1</h1>
+                                        <h3>Rejalashtirish</h3>
+                                        <p>Biz turli sohalarda biznesni rivojlantirishni rejalashtirishda yordam
+                                            beramiz.
+                                        </p>
+                                        <p>
+                                            Biz mahsulotingiz va haridorlaringiz orasida aloqa o’rnatishga ,sotuv va
+                                            ishlab
+                                            chiqarish jarayonlarini nazoratga
+                                            olishingizga ko’maklashamiz.
+                                        </p>
+                                    </li>
+                                    <li class="section_job_item" data-aos="fade-left"
+                                        style="background-image: url('{% static './images/section_job_img_two.png' %}');">
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="container">
+                                <div class="section_job_list">
+                                    <li class="section_job_item" data-aos="fade-up"
+                                        style="background-image: url('{% static './images/section_job.png' %}');">
+                                        <h1>2</h1>
+                                        <h3>Ishlab chiqish</h3>
+                                        <p>Muammo uchun eng oxirgi texnologiyalarni ishga solgan holatda dasturiy
+                                            ta’minotlar ishlab
+                                            chiqamiz.
+                                        </p>
+                                        <p>
+                                            Bugungi kundagi ilg’or texnologiyalar, dasturlash tillari va tajribali
+                                            xodimlarni jalb
+                                            qilishimiz biznesingiz rivoji
+                                            uchun muhim ahamiyatga ega.
+                                        </p>
+                                    </li>
+                                    <li class="section_job_item" data-aos="fade-left"
+                                        style="background-image: url('{% static './images/section_job_img_two.png' %}');">
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="container">
+                                <div class="section_job_list">
+                                    <li class="section_job_item" data-aos="fade-up"
+                                        style="background-image: url('{% static './images/section_job.png' %}');">
+                                        <h1>3</h1>
+                                        <h3>Rivojlantirish</h3>
+                                        <p>Bizda ishga nisbatan o’zgacha yondashuv mavjud. Biz yechimlarni qayta qayta
+                                            tekshiramiz ,
+                                            tekshiramiz, rivojlantiramiz.
+                                        </p>
+                                        <p>
+                                            Biznes tilida gapiramiz. Siz uchun tushunarli, ochiq holatda muammo uchun
+                                            yechimlarni
+                                            tadbiq qilamiz. Uzoq muddatlik
+                                            qo’llab quvvatlashga e’tibor qaratamiz.
+                                        </p>
+                                    </li>
+                                    <li class="section_job_item" data-aos="fade-left"
+                                        style="background-image: url('{% static './images/section_job_img_two.png' %}');">
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section_about" id="about">
+            <div class="section-wrapp">
+                <div class="container">
+                    <ul class="section_about_list" data-aos="fade-up"
+                        style="background-image: url('{% static './images/section_about_bg.png' %}');">
+                        <li class="section_about_list_item">
+                            <div class="section_about_heading">
+                                <h1>+70</h1>
+                                <p>Yakunlangan biznes <br> uchun yechimlar</p>
+                            </div>
+                            <ul class="section_about_numbers">
+                                <li class="section_about_number_item">
+                                    <h3>20</h3>
+                                    <p>yillik tajriba</p>
+                                </li>
+                                <li class="section_about_number_item">
+                                    <h3>15</h3>
+                                    <p>Mutaxasislar</p>
+                                </li>
+                                <li class="section_about_number_item">
+                                    <h3>200</h3>
+                                    <p>Mijozlar</p>
+                                </li>
+                                <li class="section_about_number_item">
+                                    <h3>90</h3>
+                                    <p>Dasturlar</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="section_about_list_item">
+                            <p>Biz yurtdoshlarimiz uchun juda ko’plab dasturiy ta’minotlari orqali biznes va ijtimoiy
+                                hayotdagi muammolarga raqamli
+                                yechimlar topib kelmoqdamiz.</p>
+                            <p>Asosiy maqsadimiz insonlar hayotini raqamli texnologiyalar orqali yanada
+                                osonlashtirishdan iborat.</p>
+                            <p>Bizda badiiy rahbardan tortib testergacha bo'lgan barcha kerakli mutaxassisliklar mavjud.
+                                Biz bozordagi eng yaxshi
+                                mutaxassislarni yollaymiz. Bu qimmat, lekin bunga arziydi.</p>
+                            <button class="section_about_btn btn_form_opener">Bog’lanish</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section_company">
+            <div class="section-wrapp">
+                <div class="container">
+                    <ul class="section_company_list" data-aos="fade-up">
+                        <li class="section_company_item">
+                            <h1>Biz raqamli mahsulotlar bozoriga kecha kelgan kompaniya emasmiz!</h1>
+                            <p>2012-yilda “Virtual Intelekt” MCHJ nomi bilan ish boshlaganmiz, o’sha vaqtlarda Andijon
+                                viloyatida yagona dasturiy
+                                ta’minot ishlab chiqish bilan shug’illanuvchi kompanya edik.</p>
+                            <p>2019-yildan buyon “Naqshsoft” nomli jamoamiz bilan faoliyatimizni davom ettirib
+                                kelmoqdamiz.</p>
+                        </li>
+                        <li class="section_company_item">
+                            <p>10 yillik jamoaviy tajriba bilan yanada sifatli mobil , kompyuter va veb dasturlar
+                                ko’plab sohalar uchun ishlab
+                                chiqilmoqda.</p>
+                            <p>Bugungi kunga qadar viloyatdagi ko’plab korxona va tashkilotlar uchun raqamli yechimlar
+                                topib, muaommolarini hal qilib
+                                kelmoqdamiz.</p>
+                            <button class="section_company_btn btn_form_opener">+ Mijoz bo’lish</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section_trust" id="customers">
+            <div class="section-wrapp">
+                <div class="container">
+                    <div class="section_trust_wrapp">
+                        <ul class="section_trust_list">
+                            <li class="section_trust_heading">Bizga ishonch <br>
+                                bildirishadi...</li>
+                            {% for customer in customers %}
+                            <li class="section_trust_item" title="{{customer.title}}"><img src="{{customer.image.url}}"
+                                    alt=""></li>
+                            {% endfor %}
+                        </ul>
+                        <div class="swiper_trust_one">
+                            <div class="swiper-wrapper">
+                                {% for customer in customers %}
+                                <div class="swiper-slide">
+                                    <img src="{{customer.image.url}}" alt="">
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="swiper_trust_two">
+                            <div class="swiper-wrapper">
+                                {% for customer in customers %}
+                                <div class="swiper-slide">
+                                    <img src="{{customer.image.url}}" alt="">
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <center>
+                            <button class="section_trust_btn btn_form_opener">+ Mijoz bo’lish</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section_works">
+            <div class="section-wrapp">
+                <div class="container">
+                    <ul class="section_works_list">
+                        <li class="section_works_item">
+                            <ul class="section_works_inner_list">
+                                <li class="section_works_inner_item">Bizning <br> loyihalar</li>
+                                <li class="section_works_inner_item choosed"><span class="section_work_span">All</span>
+                                </li>
+                                <li class="section_works_inner_item"><span class="section_work_span">Web</span></li>
+                                <li class="section_works_inner_item"><span class="section_work_span">Mobile</span></li>
+                                <li class="section_works_inner_item"><span class="section_work_span">Desktop</span></li>
+                            </ul>
+                        </li>
+                        <li class="section_works_item">
+                            <ul class="section_works_list_works">
+                                {% for customer in ourworks %}
+                                <li class="section_works_item_work {{customer.category}}">
+                                    <img class="section_works_item_img" src="{{customer.image.url}}" alt="">
+                                    <!-- Info Here -->
+                                    <div class="section_works_item_work_info">
+                                        <p><b>Loyihaning nomi</b>: {{customer.title}}</p>
+                                        <p><b>Author</b>: {{customer.author}}</p>
+                                        <p class="section_works_item_text">
+                                            <b>About Project:</b> {{customer.description|safe|slice:":50"}}...
+                                        </p>
+                                        <a href="{{customer.url}}">Ishni korish</a>
+                                        <div class="section_works_item_work_info_closer">
+                                            <div class="work_closer_one"></div>
+                                            <div class="work_closer_one"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                                <li class="section_work_loader">
+                                    <img src="{% static './images/output-onlinegiftools.gif' %}" alt="">
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="section-wrapp">
+            <div class="container">
+                <ul class="footer_list">
+                    <li class="footer_item">
+                        <a href="#">
+                            <img src="{% static './images/naqsh-soft-logo.png' %}" alt="">
+                        </a>
+                        <p>Dasturlar bor dasturlarning naqshidur. <br> Sen avval insonlarning naqshi bo’l.</p>
+                    </li>
+                    <li class="footer_item">
+                        <ul class="footer_inner_list">
+                            <li class="footer_inner_item">Bo’limlar</li>
+                            <li class="footer_inner_item">
+                                <p class="btn_form_opener">Bog’lanish</p>
+                            </li>
+                            <li class="footer_inner_item"><a href="#service">Xizmatlar</a></li>
+                            <li class="footer_inner_item"><a href="#about">Biz haqimizda</a></li>
+                            <li class="footer_inner_item"><a href="#customers">Mijozlar</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer_item">
+                        <ul class="footer_inner_list">
+                            <li class="footer_inner_item">Manzil</li>
+                            <li class="footer_inner_item">Andijon viloyati , Andijon shahar
+                                M. Saidov ko’chasi 6-uy.</li>
+                        </ul>
+                    </li>
+                    <li class="footer_item">
+                        <ul class="footer_socials_list">
+                            <li class="footer_socials_item"><a href="tel:+99 899 903 44 40">+99 899 903 44 40</a></li>
+                            <li class="footer_socials_item"><a href="tel:+99 893 060 50 11">+99 893 060 50 11</a></li>
+                            <li class="footer_socials_item"><a href="tel:+99 899 400 56 39">+99 899 400 56 39</a></li>
+                            <li class="footer_socials_item">Ijtimoiy tarmoqlarimiz</li>
+                            <li class="footer_socials_item">
+                                <a
+                                    href="https://www.facebook.com/search/top?q=pyblog.uz%20python%20va%20dasturlash%20blogi">
+                                    <img src="{% static './images/footer_facebook.svg' %}" alt="">
+                                </a>
+                                <a href="https://www.instagram.com/pyblog.uz/">
+                                    <img src="{% static './images/footer_instagram.svg' %}" alt="">
+                                </a>
+                                <a href="https://t.me/pybloguz">
+                                    <img src="{% static './images/footer_telegram.svg' %}" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="btn-up" href="#">
+            <i class="bi bi-chevron-up"></i>
+        </a>
+
+        <div class="wrapper loader">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="{% static './assets/js/swiper.min.js' %}"></script>
+    <script src="{% static './assets/js/swiper_settings.js' %}"></script>
+    <script src="{% static './assets/js/aos.min.js' %}"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="{% static './assets/js/main.js' %}"></script>
+    {% if messages %}
+    <script src="{% static './assets/js/messages.js' %}"></script>
+    {% endif %}
+</body>
+
+</html>
